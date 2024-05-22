@@ -10,7 +10,7 @@ X = df.drop(columns='NObeyesdad')
 y = df['NObeyesdad']
 
 # split training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.07, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.069, random_state=42)
 
 # initialize and train model
 logreg = LogisticRegression()
