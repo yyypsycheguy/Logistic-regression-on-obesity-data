@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.linear_model import LogisticRegression 
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, classification_report 
+from sklearn.metrics import accuracy_score, classification_report, f1_score
 import matplotlib.pyplot as plt
 
 df = pd.read_csv("processed_data.csv")
@@ -32,6 +32,8 @@ print(df_features)
 y_pred = logreg.predict(X_test)
 
 accuracy = accuracy_score(y_test, y_pred)
+
+
 report = classification_report(y_test, y_pred)
 
 print(f"Accuracy: {accuracy}")
@@ -51,3 +53,6 @@ plt.ylabel("importance")
 plt.savefig("Feature_importance.png")
 
 plt.show()
+
+f1s = f1_score(y_test, y_pred)
+print(f1s)
